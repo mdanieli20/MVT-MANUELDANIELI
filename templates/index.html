@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MVT-Django</title>
+</head>
+<body>
+    <h1>MVT-MANUELDANIELI</h1>
+    <p>Hace clic para cargar los familiares</p>
+    <a href="{% url 'cargar_familiares' %}">
+        <button>Cargar</button>
+    </a>
+    <p>Hace clic para listar los familiares</p>
+    <a href="{% url 'mostrar_familiares' %}">
+        <button>Listar</button>
+    </a>
+</body>
+</html>
