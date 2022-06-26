@@ -10,7 +10,11 @@
     <h2>FAMILIARES</h2>
     <ul>
         {% for familiar in listar_familiares %}
-        <li>Nombre: {{familiar.nombre}} - Edad: {{familiar.edad}} - Fecha Nacimiento: {{familiar.anio_nacimiento}}</li>
+        <li>Nombre: {{familiar.nombre}}</li>
+            <ul>
+                <li>Edad: {{familiar.edad}}</li>
+                <li>Fecha Nacimiento: {{familiar.anio_nacimiento}}</li>
+            </ul>
         {% endfor %}
     </ul>
     <a href="{% url 'volver_index' %}">

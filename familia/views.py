@@ -10,17 +10,31 @@ def index(request):
 def volver(request):
     return render(request, 'index.html')
 
-def cargar_familiares(request):
+# def cargar_familiares(request):
         
-    padre = Familiares(nombre='Nestor', edad=61, anio_nacimiento='1961-06-20')
-    madre = Familiares(nombre='Sandra', edad=60, anio_nacimiento='1962-02-26')
-    hermano = Familiares(nombre='Octavio', edad=30, anio_nacimiento='1992-02-21')
+#     padre = Familiares(nombre='Nestor', edad=61, anio_nacimiento='1961-06-20')
+#     madre = Familiares(nombre='Sandra', edad=60, anio_nacimiento='1962-02-26')
+#     hermano = Familiares(nombre='Octavio', edad=30, anio_nacimiento='1992-02-21')
     
-    padre.save()
-    madre.save()
-    hermano.save()
+#     padre.save()
+#     madre.save()
+#     hermano.save()
     
-    return render(request, 'carga_familia.html')
+#     return render(request, 'carga_familia.html')
+
+
+def cargar_familiares(request):
+    listar_familiares = Familiares.objects.all()
+    if len(listar_familiares) == 0:         
+        padre = Familiares(nombre='Nestor', edad=61, anio_nacimiento='1961-06-20')
+        madre = Familiares(nombre='Sandra', edad=60, anio_nacimiento='1962-02-26')
+        hermano = Familiares(nombre='Octavio', edad=30, anio_nacimiento='1992-02-21')
+        padre.save()
+        madre.save()
+        hermano.save()
+        return render(request, 'carga_familia.html')
+    else:
+        return render(request, 'estado_familia.html')
     
 def listar_familiares(request):
 

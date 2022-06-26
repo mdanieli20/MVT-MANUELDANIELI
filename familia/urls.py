@@ -22,5 +22,6 @@ urlpatterns = [
     path('', index),
     path('', volver, name='volver_index'),
     path('cargar_familiares/', cargar_familiares, name='cargar_familiares'),
+    path('estado_familiares/', cargar_familiares, name='estado_familiares'),
     path('familia/', listar_familiares, name='mostrar_familiares'), 
 ]
